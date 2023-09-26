@@ -1,0 +1,26 @@
+$white: #ffffff;
+$green: #4a986c;
+$blue: #5782c2;
+$lightgray: #d3d3d3;
+$shadow: 0 0 6px #333333;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 16px;
+}
+
+body {
+	display: flex;
+	width: 100vw;
+    height: 100vh;
+    background: $green url('/src/img/bg.jpg') center/cover;
+    margin: 0;
+    font-size: 30px;
+}
+
+@import "cards";
+@import "controls";

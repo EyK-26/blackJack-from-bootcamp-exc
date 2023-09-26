@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/scss/style.scss" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./src/scripts/script.js" type="module" defer></script>
+    <title>BlackJack Game</title>
+  </head>
+
+  <body>
+    <div class="controls">
+      <div class="lead-panel">
+        <div class="heading">
+          <div class="heading__icon"></div>
+          <div class="heading__title">
+            <h2>Blackjack</h2>
+          </div>
+        </div>
+
+        <div class="player-controls">
+          <button id="new-round-btn" class="btn btn-flex">NEW ROUND</button>
+        </div>
+      </div>
+
+      <div id="dealer-panel" class="hand-panel">
+        <div class="panel-title">Dealer</div>
+        <div id="dealer-score" class="score">
+          Score: <span id="dealer-score_span">0</span>
+        </div>
+        <div class="message"></div>
+      </div>
+
+      <div id="player-panel" class="hand-panel">
+        <div class="panel-title">Player</div>
+        <div id="player-score" class="score">
+          Score: <span id="player-score_span">0</span>
+        </div>
+        <div class="player-controls">
+          <button id="player-hit-btn" class="btn btn-flex">HIT</button>
+          <button id="player-stand-btn" class="btn btn-flex">STAND</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="table">
+      <div id="dealer-cards" class="cards"></div>
+      <div id="player-cards" class="cards"></div>
+    </div>
+  </body>
+</html>
