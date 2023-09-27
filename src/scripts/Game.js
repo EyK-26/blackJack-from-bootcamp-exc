@@ -31,10 +31,12 @@ export default class Game {
   }
 
   restartGame() {
-    this.hit = document.getElementById("player-hit-btn");
-    this.stand = document.getElementById("player-stand-btn");
-    this.hit.replaceWith(this.hit.cloneNode(true));
-    this.stand.replaceWith(this.stand.cloneNode(true));
+    const hit = document.getElementById("player-hit-btn");
+    const stand = document.getElementById("player-stand-btn");
+    const result = document.querySelector(".message");
+    result.textContent = "";
+    hit.replaceWith(hit.cloneNode(true));
+    stand.replaceWith(stand.cloneNode(true));
     while (this.playerDeck.firstChild) {
       this.playerDeck.removeChild(this.playerDeck.firstChild);
     }
