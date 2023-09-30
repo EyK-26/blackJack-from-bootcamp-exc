@@ -1,17 +1,17 @@
 export default class ScoreTable {
-  constructor(side) {
+  constructor(side = false) {
     this.player = document.getElementById("player-score_span");
     this.dealer = document.getElementById("dealer-score_span");
-    this.augment(side);
+    this.side = side;
+    this.augment();
   }
 
-  augment(side = null) {
-    if (side) {
+  augment() {
+    if (this.side) {
       let score = Number(this.player.textContent);
       score += 1;
       this.player.textContent = score;
     } else {
-      console.log(this.dealer.textContent);
       let score = Number(this.dealer.textContent);
       score += 1;
       this.dealer.textContent = score;

@@ -1,6 +1,6 @@
 const RGXNUM = /\d/g;
 //const RGXSTR = /(jack|queen|king)/g;
-const RGXACE = /\bace/g;
+const RGXACE = /-ace-/g;
 
 export default class Calculate {
   static calculate(cards) {
@@ -15,8 +15,7 @@ export default class Calculate {
         card.className.includes("jack")
       ) {
         score += 10;
-      } else if (RGXACE.test(card.className)) {
-        console.log("okok");
+      } else if (card.className.includes("ace-of")) {
         if (score + 11 > 21) {
           score += 1;
         } else {

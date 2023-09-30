@@ -12,8 +12,9 @@ export default class EndGame {
     const playerScore = Calculate.calculate(this.playerDeck);
     const dealerScore = Calculate.calculate(this.dealerDeck);
     const bothPassed = playerScore <= 21 && dealerScore <= 21;
-    console.log(bothPassed);
-    console.log(playerScore, dealerScore);
+
+    console.log(dealerScore, playerScore);
+
     if (playerScore > dealerScore && bothPassed) {
       this.message.textContent = "You Win";
       new ScoreTable("player");
@@ -25,7 +26,10 @@ export default class EndGame {
     }
   }
 
-  directLose(arg = null) {
+  directLose(arg = false) {
+    const playerScore = Calculate.calculate(this.playerDeck);
+    const dealerScore = Calculate.calculate(this.dealerDeck);
+    console.log(dealerScore, playerScore);
     if (arg) {
       this.message.textContent = "You Lost (busted)";
       new ScoreTable();
@@ -34,7 +38,11 @@ export default class EndGame {
       new ScoreTable("player");
     }
   }
+
   directWin() {
+    const playerScore = Calculate.calculate(this.playerDeck);
+    const dealerScore = Calculate.calculate(this.dealerDeck);
+    console.log(dealerScore, playerScore);
     this.message.textContent = "You Won (blackJack)";
     new ScoreTable("player");
   }

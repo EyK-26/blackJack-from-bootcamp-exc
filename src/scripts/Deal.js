@@ -1,5 +1,4 @@
 const CARD = "card";
-
 export default class Deal {
   static deal(deck, cards) {
     const pickedCard = cards.shift();

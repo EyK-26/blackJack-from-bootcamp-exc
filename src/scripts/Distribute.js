@@ -1,8 +1,8 @@
 import Player from "./Player";
 import Deal from "./Deal";
 import EndGame from "./EndGame";
-import PreCalculate from "./Pre-Calculate";
 import { REVERS } from "./Dealer";
+import Calculate from "./Calculate";
 
 export default class Distribute {
   constructor(shuffledCards) {
@@ -16,8 +16,7 @@ export default class Distribute {
     while (this.playerDeck.children.length < 2) {
       Deal.deal(this.playerDeck, this.shuffledCards);
     }
-    const preCalculate = new PreCalculate();
-    const playerScore = preCalculate.calculateDealerCards(this.playerDeck);
+    const playerScore = Calculate.calculate(this.playerDeck);
     if (playerScore === 21) {
       const endGame = new EndGame();
       endGame.directWin("player");

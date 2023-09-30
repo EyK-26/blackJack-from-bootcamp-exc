@@ -1,7 +1,7 @@
 import Dealer from "./Dealer";
-import PreCalculate from "./Pre-Calculate";
 import Deal from "./Deal";
 import EndGame from "./EndGame";
+import Calculate from "./Calculate";
 
 export default class Player {
   constructor(cards, hiddenCard) {
@@ -16,12 +16,9 @@ export default class Player {
   }
 
   pickAnotherCard() {
-    console.log(this.cards);
     Deal.deal(this.playerDeck, this.cards);
-    console.log(this.cards);
-    const preCalculate = new PreCalculate();
-    const playerScore = preCalculate.calculateDealerCards(this.playerDeck);
-    console.log(playerScore);
+    const playerScore = Calculate.calculate(this.playerDeck);
+    
     if (playerScore > 21) {
       const endGame = new EndGame();
       endGame.directLose("player");

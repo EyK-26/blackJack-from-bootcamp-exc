@@ -26,7 +26,6 @@ export default class Game {
         cardArray[currentIndex],
       ];
     }
-    console.log(cardArray);
     return cardArray;
   }
 

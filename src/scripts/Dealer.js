@@ -1,4 +1,4 @@
-import PreCalculate from "./Pre-Calculate";
+import Calculate from "./Calculate";
 import Deal from "./Deal";
 import EndGame from "./EndGame";
 export const REVERS = "face-revers";
@@ -19,8 +19,7 @@ export default class Dealer {
 
   dealerAction() {
     this.revealHiddenCard();
-    const preCalculate = new PreCalculate();
-    const firstTwoCards = preCalculate.calculateDealerCards(this.dealerDeck);
+    const firstTwoCards = Calculate.calculate(this.dealerDeck);
     if (firstTwoCards >= 17) {
       const endGame = new EndGame();
       endGame.compare();
@@ -33,8 +32,7 @@ export default class Dealer {
     let dealerScore = firstTwo;
     while (dealerScore < 17) {
       Deal.deal(this.dealerDeck, this.cards);
-      const preCalculate = new PreCalculate();
-      dealerScore = preCalculate.calculateDealerCards(this.dealerDeck);
+      dealerScore = Calculate.calculate(this.dealerDeck);
     }
     if (dealerScore > 21) {
       const endGame = new EndGame();
